@@ -1,0 +1,23 @@
+{
+  "name": "bummelfeed_react",
+  "version": "1.0.0",
+  "description": "Bummelfeed Probetagsaufgabe",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/qudosoft/bummelfeed_react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/qudosoft/bummelfeed_react/issues"
+  },
+  "homepage": "https://gitlab.com/qudosoft/bummelfeed_react#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
