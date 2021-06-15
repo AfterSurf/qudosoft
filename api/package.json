@@ -1,7 +1,7 @@
 {
-  "name": "bummelfeed_react",
+  "name": "bummelfeed_api",
   "version": "1.0.0",
-  "description": "Bummelfeed Probetagsaufgabe",
+  "description": "Bummelfeed API",
   "main": "server.js",
   "scripts": {
     "test": "jest --coverage",

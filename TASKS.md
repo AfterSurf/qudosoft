@@ -2,7 +2,8 @@
 
 ## Story: "Bummelfeed"
 
-Als ENTDECKEN-Team möchten wir den Kunden eine neue Seite, den *Bummelfeed*, präsentieren, damit diese abhängig von Einkaufserfahrung und Vorlieben Produkte gezeigt bekommt, die ihnen persönlich gefallen. Der Bummelfeed soll dazu einladen auf der Seite zu verweilen und dadurch neue Produkte kennenzulernen.
+Wir möchten den Kunden eine neue Seite, den *Bummelfeed*, präsentieren, damit diese abhängig von Einkaufserfahrung und Vorlieben Produkte gezeigt bekommt, die ihnen persönlich gefallen. 
+Der Bummelfeed soll dazu einladen auf der Seite zu verweilen und dadurch neue Produkte kennenzulernen.
 
 Siehe [Bummelfeed_Konzeption.pdf](./Bummelfeed_Konzeption.pdf) zur Veranschaulichung der Idee.
 
@@ -20,7 +21,8 @@ Siehe [Bummelfeed_Konzeption.pdf](./Bummelfeed_Konzeption.pdf) zur Veranschaulic
 
 3. Kategorien auswählen - Filterung in der UI
 
-    Auf der Bummelfeed-Seite soll es die Möglichkeit geben Kategorien (Oberteile, Hosen, Schuhe, Accessoires) auszuwählen. Nach Auswahl der Kategorien soll die Bummelfeed-Ansicht aktualisiert werden. Es sollen nur noch Produkte der ausgewählten Kategorie angezeigt werden.
+    Auf der Bummelfeed-Seite soll es die Möglichkeit geben Kategorien (Oberteile, Hosen, Schuhe, Accessoires) auszuwählen.
+    Nach Auswahl der Kategorien soll die Bummelfeed-Ansicht aktualisiert werden. Es sollen nur noch Produkte der ausgewählten Kategorie angezeigt werden.
 
 ### Optionale Aufgaben
 

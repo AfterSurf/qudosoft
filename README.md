@@ -1,6 +1,7 @@
-# Projekt und Aufgabe zum Kennenlerntage für Frontend-Entwickler*innnen
+# Projekt und Aufgabe zum Kennenlerntag für Frontend-Entwickler*innnen
 
-Das Projekt basiert auf React und einem node.js-Backend mit dem Express-Framework.
+Das Projekt nutzt ein node.js-Backend mit dem Express-Framework.
+Das FE-Framework kann frei gewählt werden.
 
 ## Aufgabe
 
@@ -8,25 +9,46 @@ Siehe [Story und Aufgaben](./TASKS.md)
 
 ## Notwendige Vorraussetzungen zur Umsetzung der Aufgabe
 
-* Ein Gitlab-Account (Die `Developer`-Berechtigung zum Auschecken dieses Projekts kann man als Maintainer oder Owner vergeben.)
+* Ein Gitlab-Account
 * git ist lokal installiert
 * Node.js ist lokal installiert
-* Visual Studio Code ist lokal installiert (oder eine vergleichbare Entwicklungsumgebung wie WebStorm, IDEA, Eclipse)
+* Eine IDE ist lokal installiert (Visual Studio Code, WebStorm, IDEA, Eclipse, ...)
 
-## Projekt starten
-
-### Node-Server starten
-Im Root-Verzeichnis ausführen:
+## API starten
+Im api-Verzeichnis ausführen:
 ```bash
 npm install
 npm start
 ```
 Der Server läuft nun auf Port 5000
 
-### React-Frontend starten
-Im Verzeichnis `/client` ausführen:
-```bash
-npm install
-npm start
+Über die Route `/api/products` können die Produktdaten abgerufen werden. 
+
+### Proxy API Requests bei React
+Um aus der Applikation auf die API zugreifen zu können, muss in `package.json` folgendes hinzugefügt werden: 
 ```
-Das Frontend läuft nun auf Port 3000
+"proxy": "http://localhost:5000"
+```
+Doku: https://create-react-app.dev/docs/proxying-api-requests-in-development/
+
+### Proxy API Requests bei Angular
+Um aus der Applikation auf die API zugreifen zu können, muss in `proxy.conf.json` folgendes hinzugefügt werden:
+```
+{
+  "/api/products": {
+    "target": "http://localhost:5000",
+    "secure": false
+  }
+}
+```
+Doku: https://angular.io/guide/build#proxying-to-a-backend-server
+
+### Proxy API Requests bei Vue.js
+Um aus der Applikation auf die API zugreifen zu können, muss in `vue.config.js` folgendes hinzugefügt werden:
+```
+devServer: {
+    proxy: 'http://localhost:5000'
+}
+```
+
+Doku: https://cli.vuejs.org/config/#devserver
