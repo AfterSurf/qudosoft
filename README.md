@@ -32,7 +32,7 @@ Um aus der Applikation auf die API zugreifen zu können, muss in `package.json` 
 Doku: https://create-react-app.dev/docs/proxying-api-requests-in-development/
 
 ### Proxy API Requests bei Angular
-Um aus der Applikation auf die API zugreifen zu können, muss in `proxy.conf.json` folgendes hinzugefügt werden:
+Um aus der Applikation auf die API zugreifen zu können, muss `src/proxy.conf.json` erstellt werden und folgendes hinzugefügt werden:
 ```
 {
   "/api/products": {
@@ -41,6 +41,18 @@ Um aus der Applikation auf die API zugreifen zu können, muss in `proxy.conf.jso
   }
 }
 ```
+
+In der `angular.json` muss anschließend auf die `proxyConfig.json` verwiesen werden:
+```
+"architect": {
+  "serve": {
+    "builder": "@angular-devkit/build-angular:dev-server",
+    "options": {
+      "browserTarget": "your-application-name:build",
+      "proxyConfig": "src/proxy.conf.json"
+    },
+```
+
 Doku: https://angular.io/guide/build#proxying-to-a-backend-server
 
 ### Proxy API Requests bei Vue.js
