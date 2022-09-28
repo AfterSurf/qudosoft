@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import {
+  CategoryContext,
+  CategoriesDispatchContext,
+} from "../context/categoryContext";
 
 import Cart from "./Cart";
 
@@ -6,6 +10,10 @@ const CartContainer = () => {
   const [data, setData] = useState(0);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState([]);
+
+  const chosenCategory = useContext(CategoryContext);
+  const setCategories = useContext(CategoriesDispatchContext);
 
   const entries = [];
 
@@ -13,7 +21,7 @@ const CartContainer = () => {
     fetch("http://localhost:5000/api/products")
       .then((response) => {
         if (response) {
-          console.log(response);
+          // console.log(response);
           return response.json();
         }
         throw response;
@@ -35,9 +43,9 @@ const CartContainer = () => {
   }
 
   if (data) {
-    console.log("data: ", JSON.stringify(data[0]));
+    //   console.log("data: ", JSON.stringify(data[0]));
     data.forEach((element) => {
-      console.log(element.name);
+      // console.log(element.name);
       entries.push([
         element.name,
         element.currentPriceFormated,
@@ -45,24 +53,56 @@ const CartContainer = () => {
         element.image.alt,
         element.category,
       ]);
+      // es6!
+      if (
+        !category.find((singleCategory) => singleCategory === element.category)
+      ) {
+        setCategory([...category, element.category]);
+        setCategories([...category, element.category]);
+      }
     });
   }
 
-  return (
-    <div className="elementContainer">
-      {entries.map((element) => (
-        <div>
-          <Cart
-            name={element[0]}
-            details={element[1]}
-            imgLink={element[2]}
-            imgAlt={element[3]}
-            category={element[4]}
-          ></Cart>
-        </div>
-      ))}
-    </div>
-  );
+  console.log("das sind die Kategorien: ", category);
+  console.log("das wurde gewählt: ", chosenCategory);
+
+  if (chosenCategory.length === 0) {
+    return (
+      <div className="elementContainer">
+        {entries.map((element) => (
+          <div>
+            <Cart
+              name={element[0]}
+              details={element[1]}
+              imgLink={element[2]}
+              imgAlt={element[3]}
+              category={element[4]}
+            ></Cart>
+          </div>
+        ))}
+      </div>
+    );
+  } else {
+    return (
+      <div className="elementContainer">
+        {entries.map((element) => {
+          if (chosenCategory.find((cat) => cat == element[4])) {
+            return (
+              <div>
+                <Cart
+                  name={element[0]}
+                  details={element[1]}
+                  imgLink={element[2]}
+                  imgAlt={element[3]}
+                  category={element[4]}
+                ></Cart>
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
+  }
 };
 
 export default CartContainer;
