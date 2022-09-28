@@ -7,6 +7,8 @@ const CartContainer = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const entries = [];
+
   useEffect(() => {
     fetch("http://localhost:5000/api/products")
       .then((response) => {
@@ -33,16 +35,28 @@ const CartContainer = () => {
   }
 
   if (data) {
-    console.log("data: ", JSON.stringify(data));
+    console.log("data: ", JSON.stringify(data[0]));
     data.forEach((element) => {
       console.log(element.name);
+      entries.push([
+        element.name,
+        element.currentPriceFormated,
+        element.image.src,
+        element.image.alt,
+      ]);
     });
   }
 
   return (
     <>
-      <Cart name="Erste" details="Karte"></Cart>
-      <Cart name="Zweite" details="Karte"></Cart>
+      {entries.map((element) => (
+        <Cart
+          name={element[0]}
+          details={element[1]}
+          imgLink={element[2]}
+          imgAlt={element[3]}
+        ></Cart>
+      ))}
     </>
   );
 };
