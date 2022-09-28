@@ -8,10 +8,10 @@ const CartContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // fetch("http://localhost:5000/api/products")
-    fetch("/api/products")
+    fetch("http://localhost:5000/api/products")
       .then((response) => {
         if (response) {
+          console.log(response);
           return response.json();
         }
         throw response;
@@ -34,6 +34,9 @@ const CartContainer = () => {
 
   if (data) {
     console.log("data: ", JSON.stringify(data));
+    data.forEach((element) => {
+      console.log(element.name);
+    });
   }
 
   return (
