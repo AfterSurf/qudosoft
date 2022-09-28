@@ -1,9 +1,10 @@
-const Cart = ({ name, details, imgLink, imgAlt }) => {
+const Cart = ({ name, details, imgLink, imgAlt, category }) => {
   return (
     <>
-      <img src={imgLink} alt={imgAlt} />
+      <img className="cardImage" src={imgLink} alt={imgAlt} />
       <div>{name}</div>
       <div>{details}</div>
+      <div>{category}</div>
     </>
   );
 };

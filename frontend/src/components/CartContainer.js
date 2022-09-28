@@ -43,21 +43,25 @@ const CartContainer = () => {
         element.currentPriceFormated,
         element.image.src,
         element.image.alt,
+        element.category,
       ]);
     });
   }
 
   return (
-    <>
+    <div className="elementContainer">
       {entries.map((element) => (
-        <Cart
-          name={element[0]}
-          details={element[1]}
-          imgLink={element[2]}
-          imgAlt={element[3]}
-        ></Cart>
+        <div>
+          <Cart
+            name={element[0]}
+            details={element[1]}
+            imgLink={element[2]}
+            imgAlt={element[3]}
+            category={element[4]}
+          ></Cart>
+        </div>
       ))}
-    </>
+    </div>
   );
 };
 
