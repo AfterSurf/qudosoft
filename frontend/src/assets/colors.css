@@ -1,0 +1,11 @@
+:root {
+    --text: #000000;
+    --textLight: #D9D9D9;
+    --interaction: #897160;
+    --accent: #5D4149;
+    --background: #FFF;
+    --backgroundMedium: #AA9688;
+    --backgroundLight: #E7E3DF;
+    --statusGreenFull: #337E33;
+    --statusGreenLight: #EAF2EA;
+}

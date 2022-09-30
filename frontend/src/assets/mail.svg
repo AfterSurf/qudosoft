@@ -1,0 +1,9 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xml:space="preserve"
+     class="common_root common_large common_strokeBased"><title>Mail</title>
+    <g style="fill: none; stroke: currentColor; vector-effect: non-scaling-stroke;">
+        <path d="M21.089,20H2.911C1.86,20,1,19.14,1,18.089V5.911C1,4.86,1.86,4,2.911,4h18.178C22.14,4,23,4.86,23,5.911 v12.179C23,19.14,22.14,20,21.089,20z"></path>
+        <polyline points="1,6 12,14 23,6 	"></polyline>
+        <line x1="9.07" y1="12.132" x2="1" y2="18.001"></line>
+        <line x1="23" y1="18.001" x2="14.971" y2="12.161"></line>
+    </g>
+</svg>
