@@ -40,7 +40,7 @@ const Cart = ({ name, details, imgLink, imgAlt, category }) => {
 };
 
 const pushDataToApi = async (input) => {
-  fetch("http://localhost:5000/submit", {
+  fetch("http://localhost:5001/submit", {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

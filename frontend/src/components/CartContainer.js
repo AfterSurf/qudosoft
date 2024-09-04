@@ -18,7 +18,7 @@ const CartContainer = () => {
   const entries = [];
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("http://localhost:5001/api/products")
       .then((response) => {
         if (response) {
           return response.json();
